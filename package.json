@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.848.0",
+    "@aws-sdk/util-dynamodb": "^3.848.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  },
+  "name": "public-website",
+  "version": "1.0.0",
+  "description": "The public website www.butlerjcr.com",
+  "main": "local.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephinebutlerjcr/public-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephinebutlerjcr/public-website/issues"
+  },
+  "homepage": "https://github.com/josephinebutlerjcr/public-website#readme"
+}

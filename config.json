@@ -1,0 +1,23 @@
+{
+    "tables":{
+        "groups":"groups"
+    },
+    "buckets":{
+        "content":"butler-jcr-public"
+    },
+    "pageMaps":{
+        "GET/": "frontPage.html",
+        "GET/college": "college.html",
+        "GET/contact": "contact.html",
+        "GET/freshers": "freshers.html",
+        "GET/privacy": "privacy.html",
+        "GET/welfare": "welfare.html",
+        "GET/groups": "groups.html"
+    },
+    "extraMaps":{
+        "GET/style.css": {
+            "data": "assets/css/style.css",
+            "contentType": "text/css"
+        }
+    }
+}

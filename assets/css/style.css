@@ -1,0 +1,463 @@
+/* ===========================
+   General Styles
+=========================== */
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #f8f9fc;
+  color: #222;
+  height: 100%;
+}
+
+a {
+  color: #b1333a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 2em;
+}
+
+main {
+  min-height: calc(100vh - 225px);
+}
+
+
+/* ===========================
+   Generic Components
+=========================== */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.beautiful-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #b1333a, #f0d954);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.beautiful-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.beautiful-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   Navbar
+=========================== */
+.navbar {
+  background-color: #b1333a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 500;
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+  background-color: #b1333a;
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ddeeff;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 1px #fff);
+}
+
+/* ===========================
+   Banner
+=========================== */
+.banner-image {
+  background: url('https://butler-jcr-public.s3.eu-west-2.amazonaws.com/assets/moundAerial2.jpg') no-repeat center center/cover;
+  height: 50vh;
+  width: 100%;
+}
+
+/* ===========================
+   Welcome Message
+=========================== */
+.welcome-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #b1333a;
+}
+
+.welcome-message h1 {
+  color: #f0d954;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* ===========================
+   Faces of Butler
+=========================== */
+.faces-of-butler {
+  background-color: #b1333a;
+  color: white;
+}
+
+.faces-of-butler a {
+  color: #f0d954;
+}
+
+.face-row {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 2rem auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.face-img img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+.face-content {
+  flex: 1;
+  min-width: 240px;
+}
+
+.face-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .face-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   Facilities
+=========================== */
+.facility-row {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.facility-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.facility-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.facility-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ===========================
+   Misc
+=========================== */
+.main-content {
+  padding: 2rem;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.redirect-button {
+  background-color: #b1333a;
+  color: #f0d954;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.redirect-button:hover {
+  background-color: #992c33;
+}
+
+/* form */
+.inputField {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.inputSubmit {
+  width: 100%;
+  background-color: #b1333a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inputSubmit:hover {
+  background-color: #992c33;
+}
+
+/* Student Groups */
+.groupSearch {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.groupSearch input {
+  width: 50%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.groupCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.groupCard {
+  width: 300px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.groupCard img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.groupCardBody {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.groupName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.groupLinks {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.groupLinks a {
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.groupLinks a:hover {
+  color: #b1333a;
+}
+
+.groupCardFooter {
+  padding: 1rem;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+
+.groupView {
+  background-color: #b1333a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.groupView:hover {
+  background-color: #992c33;
+}
+
+/* societies expanded */
+.groupSummary {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: #fff;
+  max-width: 800px;
+  margin: 1rem auto;
+  flex-wrap: wrap;
+}
+
+.groupSummary .logo {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.groupSummary .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.groupSummary .details {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.groupSummary .name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.groupSummary .description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.groupSummary .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.groupSummary .tag {
+  background-color: #e3d954;
+  color: #b1333a;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.groupSummary .socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.groupSummary .socials a {
+  color: #b1333a;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.groupSummary .socials a:hover {
+  color: #e3d954;
+}
+
+@media (max-width: 600px) {
+  .groupSummary {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .groupSummary .details {
+    align-items: center;
+  }
+}

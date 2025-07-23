@@ -4,7 +4,6 @@ const config = require("./config.json")
 
 // local testing only
 const express = require("express");
-const path = require("path");
 const app = express();
 const port = 3000;
 require("dotenv").config();
@@ -13,15 +12,6 @@ require("dotenv").config();
 const pageMaps = config.pageMaps;
 const extraMaps = config.extraMaps;
 
-// Special JSON route
-app.get("/groups/data", async (req, res) => {
-    let event = buildLambdaEvent(req)
-
-    const { getData } = require("./commands/groupsData");
-    const data = await getData(event); // In Lambda, this would be the `event`
-    res.set("Content-Type", "application/json");
-    res.send(JSON.stringify(data));
-});
 
 // main sequence, translated for this use.
 app.use(async (req, res) => {

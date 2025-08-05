@@ -287,6 +287,19 @@ footer a {
   background-color: #992c33;
 }
 
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 180px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  transition: border-color 0.3s;
+  font-family: Verdana;
+}
+
 /* Student Groups */
 .groupSearch {
   margin-bottom: 2rem;

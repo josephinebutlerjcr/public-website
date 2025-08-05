@@ -1,9 +1,11 @@
 // dynamodb functions
 const { DynamoDBClient, GetItemCommand, ScanCommand  } = require("@aws-sdk/client-dynamodb");
 const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
+const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
+const { Buffer } = require("buffer");
 
 // exports
-module.exports = { getItem, scanItems }
+module.exports = { getItem, scanItems, getS3Item }
 
 // base functions
 async function getItem(table,key){
@@ -79,4 +81,20 @@ async function scanItems(table,filterExp,expressionVals,expressionNames){
     } else {
         return itemsRtn
     }
+}
+
+async function streamToString(stream) {
+    return new Promise((resolve, reject) => {
+        const chunks = [];
+        stream.on("data", (chunk) => chunks.push(chunk));
+        stream.on("error", reject);
+        stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    });
+}
+async function getS3Item(bucket,key){
+    const client = new S3Client();
+    const command = new GetObjectCommand({ Bucket: bucket, Key: key });
+    let resp = await client.send(command);
+    const bodyContents = await streamToString(resp.Body);
+    return bodyContents;
 }

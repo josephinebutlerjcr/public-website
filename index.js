@@ -35,6 +35,15 @@ module.exports.handler = async (event) => {
                 "Content-Type": "application/json"
             }
         }
+    } else if (pageCode == "GET/") {
+        const { frontPage } = require("./commands/frontPage");
+        let bodyTmp = await frontPage();
+        returnBody = {
+            body: bodyTmp,
+            headers: {
+                "Content-Type": "text/html"
+            }
+        }
     }
 
     return returnBody;

@@ -5,7 +5,7 @@ const config = require("./config.json")
 // local testing only
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3030;
 require("dotenv").config();
 
 // maps
@@ -42,6 +42,15 @@ app.use(async (req, res) => {
             body: JSON.stringify(bodyTmp),
             headers: {
                 "Content-Type": "application/json"
+            }
+        }
+    } else if (pageCode == "GET/") {
+        const { frontPage } = require("./commands/frontPage");
+        let bodyTmp = await frontPage();
+        returnBody = {
+            body: bodyTmp,
+            headers: {
+                "Content-Type": "text/html"
             }
         }
     }

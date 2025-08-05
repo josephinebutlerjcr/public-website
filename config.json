@@ -3,10 +3,10 @@
         "groups":"groups"
     },
     "buckets":{
-        "content":"butler-jcr-public"
+        "content":"butler-jcr-public",
+        "operational":"butler-jcr"
     },
     "pageMaps":{
-        "GET/": "frontPage.html",
         "GET/college": "college.html",
         "GET/contact": "contact.html",
         "GET/freshers": "freshers.html",

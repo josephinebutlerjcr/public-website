@@ -34,8 +34,8 @@ async function frontPage(){
     let body = fs.readFileSync(`assets/html/frontPage.html`).toString()
         .replace(/{{presidentName}}/g,president.name)
         .replace(/{{facsoName}}/g,facso.name)
-        .replace(/{{presidentBio}}/g,md.render(president.bio))
-        .replace(/{{facsoBio}}/g,md.render(facso.bio))
+        .replace(/{{presidentBio}}/g,md.render(president.bio).replace(/\n/g,"<br>").replace(/<p>/g,"").replace(/<\/p>/g,""))
+        .replace(/{{facsoBio}}/g,md.render(facso.bio).replace(/\n/g,"<br>").replace(/<p>/g,"").replace(/<\/p>/g,""))
         .replace(/{{presidentAvatar}}/g,president.avatar ? `https://butler-jcr-public.s3.eu-west-2.amazonaws.com/avatars/${president.cis}.jpg` : "https://butler-jcr-public.s3.eu-west-2.amazonaws.com/sabbs/0Unknown.jpg")
         .replace(/{{facsoAvatar}}/g,facso.avatar ? `https://butler-jcr-public.s3.eu-west-2.amazonaws.com/avatars/${facso.cis}.jpg` : "https://butler-jcr-public.s3.eu-west-2.amazonaws.com/sabbs/0Unknown.jpg");
 

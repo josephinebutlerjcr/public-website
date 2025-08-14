@@ -12,7 +12,8 @@
         "GET/freshers": "freshers.html",
         "GET/privacy": "privacy.html",
         "GET/welfare": "welfare.html",
-        "GET/groups": "groups.html"
+        "GET/groups": "groups.html",
+        "GET/acknowledgements":"acknowledgements.html"
     },
     "extraMaps":{
         "GET/style.css": {

@@ -25,6 +25,7 @@
                 <li><a href="/freshers">Freshers</a></li>
                 <li><a href="/college">The College</a></li>
                 <li><a href="/groups">Groups</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <li><a href="https://josephine.butlerjcr.com">Intranet</a></li>
             </ul>
         </nav>
@@ -106,15 +107,12 @@
                         if(!group.name.toLowerCase().includes(search)){continue};
 
                         const card = createGroupCard(group);
-                        switch(group.category){
-                            case "society":
-                                document.getElementById("societies").appendChild(card);
-                            case "sport":
-                                document.getElementById("sports").appendChild(card);
-                            case "committee":
-                                document.getElementById("committees").appendChild(card);
-                            default:
-                                document.getElementById("societies").appendChild(card);
+                        if(group.category == "sport"){
+                            document.getElementById("sports").appendChild(card);
+                        } else if(group.category == "committee"){
+                            document.getElementById("committees").appendChild(card);
+                        } else {
+                            document.getElementById("societies").appendChild(card);
                         }
                     }
                 }

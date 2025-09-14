@@ -33,6 +33,8 @@ async function getList(){
         })
     }
 
+    finalList.sort((a, b) => a.name.localeCompare(b.name));
+
     return finalList;
 }
 

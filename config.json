@@ -14,7 +14,8 @@
         "GET/welfare": "welfare.html",
         "GET/groups": "groups.html",
         "GET/acknowledgements":"acknowledgements.html",
-        "GET/events":"events.html"
+        "GET/events":"events.html",
+        "GET/stash":"stash.html"
     },
     "extraMaps":{
         "GET/style.css": {

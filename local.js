@@ -53,6 +53,10 @@ app.use(async (req, res) => {
                 "Content-Type": "text/html"
             }
         }
+    } else if(pageCode == "GET/stash") {
+        const {stashPage} = require("./commands/stash");
+        let bodyTmp = await stashPage();
+        returnBody= bodyTmp
     }
 
     // how we handle the returns here for express only:

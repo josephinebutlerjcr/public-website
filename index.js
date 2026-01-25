@@ -44,6 +44,10 @@ module.exports.handler = async (event) => {
                 "Content-Type": "text/html"
             }
         }
+    } else if(pageCode == "GET/stash") {
+        const {stashPage} = require("./commands/stash");
+        let bodyTmp = await stashPage();
+        returnBody= bodyTmp
     }
 
     return returnBody;

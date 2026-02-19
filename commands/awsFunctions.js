@@ -5,7 +5,7 @@ const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
 const { Buffer } = require("buffer");
 
 // exports
-module.exports = { getItem, scanItems, getS3Item }
+module.exports = { getItem, scanItems, getS3Item, listDirectoryFiles }
 
 // base functions
 async function getItem(table,key){
@@ -97,4 +97,38 @@ async function getS3Item(bucket,key){
     let resp = await client.send(command);
     const bodyContents = await streamToString(resp.Body);
     return bodyContents;
+}
+
+const { ListObjectsV2Command } = require("@aws-sdk/client-s3");
+
+async function listDirectoryFiles(bucketName, prefix) {
+    const s3 = new S3Client({ region: "eu-west-2" });
+
+    let list = [];
+
+    try {
+        const command = new ListObjectsV2Command({
+            Bucket: bucketName,
+            Prefix: prefix,
+            Delimiter: "/"
+        });
+
+        const response = await s3.send(command);
+
+        if (response.Contents) {
+            response.Contents.forEach((item) => {
+                const key = item.Key;
+                const parts = key.split("/");
+                const filename = parts[parts.length - 1];
+                if (filename) {
+                    const nameWithoutExt = filename.split(".")[0];
+                    list.push(nameWithoutExt);
+                }
+            });
+        }
+    } catch (err) {
+        console.error("Error listing directory files:", err);
+    }
+
+    return list;
 }

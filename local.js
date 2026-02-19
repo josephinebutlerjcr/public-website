@@ -57,6 +57,10 @@ app.use(async (req, res) => {
         const {stashPage} = require("./commands/stash");
         let bodyTmp = await stashPage();
         returnBody= bodyTmp
+    } else if(pageCode == "GET/policy") {
+        const {policyPage} = require("./commands/policy");
+        let bodyTmp = await policyPage();
+        returnBody= bodyTmp
     }
 
     // how we handle the returns here for express only:

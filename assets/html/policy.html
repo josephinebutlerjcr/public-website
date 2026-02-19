@@ -5,25 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="https://butler-jcr-public.s3.eu-west-2.amazonaws.com/assets/favicon.png">
-    <title>404 | Butler JCR</title>
+    <title>Policies & Disclaimers | Butler JCR</title>
     <link rel="stylesheet" href="/style.css" />
-    <style>
-        .error-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 4rem 1rem;
-        }
-        .error-wrapper img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -49,14 +32,23 @@
         </nav>
     </header>
 
-    <main>
-        <div class="error-wrapper">
-            <img src="https://butler-jcr-public.s3.eu-west-2.amazonaws.com/assets/err.jpg" alt="404 - Not Found">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: #b1333a;">Page not found</h1>
-            <p style="font-size: 1.2rem;">Sorry, we couldn’t find what you were looking for.</p>
-            <p><a href="/">Return to the homepage</a></p>
-        </div>
+    <section class="welcome-message">
+        <h1>Policies and Disclaimers</h1>
+    </section>
+
+    <main class="main-content">
+        <section class="intro" style="text-align: left; margin: 0 auto; max-width: 800px;">
+            <h2>Policies and Procedures</h2>
+            {{policies}}
+        </section>
+        <section class="intro" style="text-align: left; margin: 0 auto; max-width: 800px;">
+            <h2>Website Data Processing Disclaimers</h2>
+            <p>We don't process any of your data whilst you are accessing www.butlerjcr.com. We don't use cookies on this public website.</p>
+            <p>Our <a href="https://josephine.butlerjcr.com">intranet (josephine.butlerjcr.com)</a> contains all information. We use cookies on the intranet, but only an essential cookie to keep track of your session once you have logged in, retained for up to 26 weeks after signing in. Signing in is restricted to anyone who is a registered alumni of Josephine Butler College, or a current member of Durham University with a CIS account.</p>
+            <p>We may collect names (for those who are or have been JCR members, and/or those in college families), membership status, college family data (applicable for those being a college parent, and all college children, for children who have matriculated in October 2025 onwards), awards, and what JCR societies / sports / committees you may be part of. Please email us <a href="/contact">at the contact page</a> if you would like to exercise any rights under the Data Protection Act 2018.</p>
+        </section>
     </main>
+
 
     <footer>
         <div class="footer-content">

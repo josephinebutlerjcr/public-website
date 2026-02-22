@@ -20,7 +20,13 @@ async function policyPage(event){
         let policyHtml = "<p>Policies will open in new tab once clicked</p>\n<ul>";
 
         let directory = await listDirectoryFiles(config.buckets.content, `policy/`);
-        directory = directory.sort()
+        
+        directory.sort((a, b) => {
+            const nameA = policySlugFormat(a).toLowerCase();
+            const nameB = policySlugFormat(b).toLowerCase();
+            return nameA.localeCompare(nameB);
+        });
+        
         for(let article of directory){
             let name = policySlugFormat(article)
             policyHtml += `<li><a href="https://${config.buckets.content}.s3.eu-west-2.amazonaws.com/policy/${article}.pdf" target="_blank">${name}</a></li>`
@@ -44,5 +50,5 @@ function policySlugFormat(slug){
 
     let officialNumber = `P/${String(number).padStart(3, '0')}`;
 
-    return `${officialNumber}: ${name.replace(/_/g," ")} (Lapses ${lapse.replace(/_/g," ")})`
+    return `${officialNumber}: ${name.replace(/_/g," ")}`
 }

@@ -6,20 +6,14 @@
         "content":"butler-jcr-public",
         "operational":"butler-jcr"
     },
-    "pageMaps":{
-        "GET/college": "college.html",
-        "GET/contact": "contact.html",
-        "GET/freshers": "freshers.html",
-        "GET/privacy": "privacy.html",
-        "GET/welfare": "welfare.html",
-        "GET/groups": "groups.html",
-        "GET/acknowledgements":"acknowledgements.html",
-        "GET/events":"events.html"
-    },
     "extraMaps":{
         "GET/style.css": {
             "data": "assets/css/style.css",
             "contentType": "text/css"
+        },
+        "GET/groups": {
+            "data": "assets/html/groups.html",
+            "contentType": "text/html"
         }
     }
 }

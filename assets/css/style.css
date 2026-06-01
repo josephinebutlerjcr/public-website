@@ -474,3 +474,37 @@ textarea {
     align-items: center;
   }
 }
+
+/* GALLERT */
+.galleryContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .galleryImage {
+      height: 140px;
+      width: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .galleryImage {
+        height: 160px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .galleryImage {
+        height: 180px;
+      }
+    }
+
+
+/* STASH */
+.stashImage{
+  max-width: 75%; 
+  max-height: 300px;
+}

@@ -6,6 +6,8 @@ Although quite a bit of this is based on Ned Reid's version, I have chosen to us
 
 I have also divided the website into a much lightweight public side, and then the private side, with much more data which is being protected behind this so-called password wall.
 
+> PLEASE READ MANUALS, [http://manuals.butlerjcr.com/](http://manuals.butlerjcr.com/) AS THIS GIVES YOU A GOOD IDEA ON HOW TO MAINTAIN THIS
+
 ## Working On It
 
 You must have node-js and npm installed. Node version 20, and npm version 10 onwards will work. 

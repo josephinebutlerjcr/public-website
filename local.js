@@ -8,8 +8,9 @@ const app = express();
 const port = 3030;
 require("dotenv").config();
 
+const {getPage} = require("./commands/pageLoaders")
+
 // maps
-const pageMaps = config.pageMaps;
 const extraMaps = config.extraMaps;
 
 
@@ -26,16 +27,25 @@ app.use(async (req, res) => {
         }
     }
 
-    if (Object.keys(pageMaps).includes(pageCode)) {
-        returnBody.body = fs.readFileSync(`assets/html/${pageMaps[pageCode]}`).toString();
+    let automated = await getPage(pageCode);
+
+    if(automated != false) {
+        // the pages editable in the exec pages
+        returnBody = automated;
+
     } else if (Object.keys(extraMaps).includes(pageCode)) {
+        // special pages
         returnBody.body = fs.readFileSync(extraMaps[pageCode].data).toString();
         returnBody.headers["Content-Type"] = extraMaps[pageCode].contentType;
+
     } else {
+        // otherwise a 404!
         returnBody.body = fs.readFileSync(`assets/html/404.html`).toString();
     }
 
+    // special cases!
     if (pageCode == "GET/groups/data") {
+        // Student Group data JSON
         const { getData } = require("./commands/groupsData");
         let bodyTmp = await getData(event);
         returnBody = {
@@ -44,7 +54,9 @@ app.use(async (req, res) => {
                 "Content-Type": "application/json"
             }
         }
+
     } else if (pageCode == "GET/") {
+        // the front page
         const { frontPage } = require("./commands/frontPage");
         let bodyTmp = await frontPage();
         returnBody = {
@@ -53,11 +65,15 @@ app.use(async (req, res) => {
                 "Content-Type": "text/html"
             }
         }
+
     } else if(pageCode == "GET/stash") {
+        // the stash site
         const {stashPage} = require("./commands/stash");
         let bodyTmp = await stashPage();
         returnBody= bodyTmp
+
     } else if(pageCode == "GET/policy") {
+        // jcr policies
         const {policyPage} = require("./commands/policy");
         let bodyTmp = await policyPage();
         returnBody= bodyTmp

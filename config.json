@@ -1,6 +1,7 @@
 {
     "tables":{
-        "groups":"groups"
+        "groups":"groups",
+        "tech":"techhire"
     },
     "buckets":{
         "content":"butler-jcr-public",
@@ -15,5 +16,7 @@
             "data": "assets/html/groups.html",
             "contentType": "text/html"
         }
-    }
+    },
+    "fromEmail":"Butler JCR Intranet <noreply@butlerjcr.com>",
+    "replytoEmail":"webmaster@butlerjcr.com"
 }

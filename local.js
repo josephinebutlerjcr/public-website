@@ -76,6 +76,16 @@ app.use(async (req, res) => {
         const {policyPage} = require("./commands/policy");
         let bodyTmp = await policyPage();
         returnBody= bodyTmp
+    } else if(pageCode == "GET/tech") {
+        // tech hire-get
+        const {techHireGet} = require("./commands/techHireGet");
+        let bodyTmp = await techHireGet();
+        returnBody= bodyTmp
+    } else if(pageCode == "POST/tech") {
+        // tech hire-post
+        const {techHirePost} = require("./commands/techHirePost");
+        let bodyTmp = await techHirePost();
+        returnBody= bodyTmp
     }
 
     // how we handle the returns here for express only:
